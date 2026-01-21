@@ -1,4 +1,4 @@
-name: ci-dockerhub
+name: CI Docker Hub
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -35,3 +35,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/python-ci-docker-lab:latest
+
